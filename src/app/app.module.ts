@@ -18,6 +18,12 @@ import { NavItemComponent } from './theme/layout/admin/navigation/nav-content/na
 import { SharedModule } from './theme/shared/shared.module';
 import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ProfileModule } from './demo/profile/profile.module';
+import { ProfileComponent } from './demo/profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +39,11 @@ import { GuestComponent } from './theme/layout/guest/guest.component';
     NavItemComponent,
     NavCollapseComponent,
     ConfigurationComponent,
-    GuestComponent
+    GuestComponent,
+    
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule,HttpClientModule,CommonModule,FormsModule],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
 })

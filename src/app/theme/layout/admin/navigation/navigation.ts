@@ -25,107 +25,86 @@ const NavigationItems = [
     children: [
       {
         id: 'default',
-        title: 'Dashboard',
+        title: 'Controle Commercial',
         type: 'item',
         classes: 'nav-item',
-        url: '/default',
+        url: '/controle-commercial',
         icon: 'ti ti-dashboard',
         breadcrumbs: false
-      }
+      },
+      {
+        id: 'default',
+        title: 'Marketting',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/marketting',
+        icon: 'ti ti-dashboard',
+        breadcrumbs: false
+      },
+      {
+        id: 'default',
+        title: 'Logistics',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/logistics',
+        icon: 'ti ti-dashboard',
+        breadcrumbs: false
+      },
+      
+      {
+        id: 'default',
+        title: 'Quality',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/quality',
+        icon: 'ti ti-dashboard',
+        breadcrumbs: false
+      },
     ]
   },
   {
     id: 'page',
-    title: 'Pages',
+    title: 'Ask Ai ✨',
     type: 'group',
     icon: 'icon-navigation',
     children: [
       {
-        id: 'Authentication',
-        title: 'Authentication',
-        type: 'collapse',
-        icon: 'ti ti-key',
-        children: [
-          {
-            id: 'login',
-            title: 'Login',
-            type: 'item',
-            url: '/guest/login',
-            target: true,
-            breadcrumbs: false
-          },
-          {
-            id: 'register',
-            title: 'Register',
-            type: 'item',
-            url: '/guest/register',
-            target: true,
-            breadcrumbs: false
-          }
-        ]
+        id:'default',
+        title: 'Market Demand ',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/marketdemand',
+        icon: 'ti ti-search'
+      
+      },
+      {
+        id:'default',
+        title: 'Sales Prediction ',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/sales-prediction',
+        icon: 'ti ti-stats-up'
       }
+      
     ]
   },
   {
-    id: 'elements',
-    title: 'Elements',
+    id: 'default',
+    title: 'Profile',
     type: 'group',
     icon: 'icon-navigation',
     children: [
       {
-        id: 'typography',
-        title: 'Typography',
+        id:'default',
+        title: 'Profile',
         type: 'item',
         classes: 'nav-item',
-        url: '/typography',
-        icon: 'ti ti-typography'
-      },
-      {
-        id: 'color',
-        title: 'Colors',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/color',
-        icon: 'ti ti-brush'
-      },
-      {
-        id: 'tabler',
-        title: 'Tabler',
-        type: 'item',
-        classes: 'nav-item',
-        url: 'https://tabler-icons.io/',
-        icon: 'ti ti-plant-2',
-        target: true,
-        external: true
+        url: '/profile',
+        icon: 'ti ti-user',
       }
     ]
   },
-  {
-    id: 'other',
-    title: 'Other',
-    type: 'group',
-    icon: 'icon-navigation',
-    children: [
-      {
-        id: 'sample-page',
-        title: 'Sample Page',
-        type: 'item',
-        url: '/sample-page',
-        classes: 'nav-item',
-        icon: 'ti ti-brand-chrome'
-      },
-      {
-        id: 'document',
-        title: 'Document',
-        type: 'item',
-        classes: 'nav-item',
-        url: 'https://codedthemes.gitbook.io/berry-angular/',
-        icon: 'ti ti-vocabulary',
-        target: true,
-        external: true
-      }
-    ]
-  }
+  
 ];
 
 @Injectable()

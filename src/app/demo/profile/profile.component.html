@@ -1,0 +1,15 @@
+<!-- Profile Component HTML -->
+
+
+  <section *ngIf="profile">
+    <h2>Profile</h2>
+    <div *ngFor="let p of profile">
+      <ul>
+        <li><strong>ID:</strong> {{ p.id }}</li>
+        <li><strong>Email:</strong> {{ p.email }}</li>
+        <li><strong>First Name:</strong> {{ p.firstName }}</li>
+        <li><strong>Last Name:</strong> {{ p.lastName }}</li>
+        <li><strong>Roles:</strong>{{ p.role }}</li>
+      </ul>
+    </div>
+  </section>
