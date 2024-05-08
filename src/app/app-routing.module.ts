@@ -5,6 +5,9 @@ import { GuestComponent } from './theme/layout/guest/guest.component';
 import { AuthGuard } from './demo/pages/authentication/auth-guard';
 import { CommonModule } from '@angular/common';
 import { RoleGuard } from './demo/pages/authentication/roleguard';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MarketComponent } from './demo/market/market.component';
+import { SalesComponent } from './demo/sales/sales.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,12 @@ const routes: Routes = [
       {
         path: 'default',
         loadComponent: () => import('./demo/default/default.component').then((c) => c.DefaultComponent)
+      },
+      {path:'marketdemand',
+      component:MarketComponent
+      },
+      {path:'sales',
+        component:SalesComponent
       },
       {
         path: 'marketting',
@@ -88,7 +97,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),CommonModule],
+  imports: [RouterModule.forRoot(routes),CommonModule,ReactiveFormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

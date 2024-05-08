@@ -23,6 +23,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProfileModule } from './demo/profile/profile.module';
 import { ProfileComponent } from './demo/profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MarketComponent } from './demo/market/market.component';
+import { SalesComponent } from './demo/sales/sales.component';
 
 
 @NgModule({
@@ -40,10 +43,11 @@ import { ProfileComponent } from './demo/profile/profile.component';
     NavCollapseComponent,
     ConfigurationComponent,
     GuestComponent,
-    
+    MarketComponent,
+    SalesComponent
     
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule,HttpClientModule,CommonModule,FormsModule],
+  imports: [ReactiveFormsModule,BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule,HttpClientModule,CommonModule,FormsModule],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
 })

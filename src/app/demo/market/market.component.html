@@ -1,10 +1,10 @@
-<div>
-    <input type="number" [(ngModel)]="years[0]" placeholder="Year 1">
-    <input type="number" [(ngModel)]="years[1]" placeholder="Year 2">
-    <input type="number" [(ngModel)]="years[2]" placeholder="Year 3">
-    <button (click)="getPredictions()">Get Predictions</button>
-    <ul *ngIf="predictions.length">
-      <li *ngFor="let prediction of predictions">{{ prediction }}</li>
-    </ul>
-  </div>
-  
+<form [formGroup]="marketForm">
+  <input type="number" formControlName="year1" placeholder="Year 1">
+  <input type="number" formControlName="year2" placeholder="Year 2">
+  <input type="number" formControlName="year3" placeholder="Year 3">
+  <button type="button" (click)="getPredictions()">Get Predictions</button>
+</form>
+
+<ul *ngIf="predictions.length">
+  <li *ngFor="let prediction of predictions">{{ prediction }}</li>
+</ul>

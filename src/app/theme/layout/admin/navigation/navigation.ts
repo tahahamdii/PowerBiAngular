@@ -59,7 +59,8 @@ const NavigationItems = [
         url: '/quality',
         icon: 'ti ti-dashboard',
         breadcrumbs: false
-      },
+      }
+      
     ]
   },
   {
@@ -82,7 +83,7 @@ const NavigationItems = [
         title: 'Sales Prediction ',
         type: 'item',
         classes: 'nav-item',
-        url: '/sales-prediction',
+        url: '/sales',
         icon: 'ti ti-stats-up'
       }
       

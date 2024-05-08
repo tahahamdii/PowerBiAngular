@@ -1,1 +1,29 @@
-<p>sales works!</p>
+<div>
+    <div *ngFor="let item of inputData; let i = index">
+      <label for="product{{ i }}">Produit:</label>
+      <input type="text" id="product{{ i }}" [(ngModel)]="item.Produit">
+      <label for="quantity{{ i }}">Quantité vendu:</label>
+      <input type="number" id="quantity{{ i }}" [(ngModel)]="item['Quantité vendu']">
+      <label for="region{{ i }}">Region:</label>
+      <input type="text" id="region{{ i }}" [(ngModel)]="item.Region">
+      <button (click)="removeInputRow(i)">Remove</button>
+    </div>
+    <button (click)="addInputRow()">Add Row</button>
+    <button (click)="analyzeSales()">Analyze Sales</button>
+  </div>
+  
+  <div *ngIf="clusters.length">
+    <table>
+      <thead>
+        <tr>
+          <th>Cluster</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cluster of clusters; let i = index">
+          <td>{{ cluster }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

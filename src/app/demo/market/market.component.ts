@@ -1,28 +1,45 @@
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgModel, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-market',
-  standalone: true,
-  imports: [NgIf, NgFor],
   templateUrl: './market.component.html',
   styleUrl: './market.component.scss'
 })
-export class MarketComponent {
-  years: number[] = [null, null, null];
+export class MarketComponent implements OnInit {
+  marketForm: FormGroup;
   predictions: number[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private formBuilder: FormBuilder
+  ) { }
+
+  ngOnInit(): void {
+    this.marketForm = this.formBuilder.group({
+      year1: [null, Validators.required],
+      year2: [null, Validators.required],
+      year3: [null, Validators.required]
+    });
+  }
 
   getPredictions() {
-    const data = {
-      "data": this.years.map(year => ({ "Year": year }))
-                 .filter(yearObj => yearObj.Year !== null) // Filter out null values
-    };
-    this.http.post<any>('http://your-flask-api-url/predict', data).subscribe(response => {
-      this.predictions = response.predictions;
-    });
-  }    
+    if (this.marketForm.valid) {
+      const years = [
+        this.marketForm.get('year1').value,
+        this.marketForm.get('year2').value,
+        this.marketForm.get('year3').value
+      ];
+      const data = {
+        "data": years.map(year => ({ "Year": year }))
+      };
+      this.http.post<any>('http://127.0.0.1:5000/predict', data).subscribe(response => {
+        console.log(data)
+        console.log(response)
+        this.predictions = response.predictions;
+      });
+    }
+  }
 }
